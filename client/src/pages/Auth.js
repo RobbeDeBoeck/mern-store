@@ -5,7 +5,7 @@ import Register from "../components/Register";
 
 export default function Auth() {
   return (
-    <div className=" container mx-auto grid gap-10 grid-cols-2">
+    <div className=" container mx-auto md:grid gap-10 grid-cols-2">
       <Login />
       <Register />
     </div>
