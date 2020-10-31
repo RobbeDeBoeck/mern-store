@@ -1410,6 +1410,10 @@ video {
     display: table-cell;
   }
 
+  .md\:grid {
+    display: grid;
+  }
+
   .md\:hidden {
     display: none;
   }
