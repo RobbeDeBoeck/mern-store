@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+  @apply bg-gray-200;
+}
+
+.form-control {
+  @apply px-6 py-2 border rounded-md;
+}
+
+.form-control:focus {
+  @apply shadow-outline;
+}
+
+.alert {
+  @apply border px-4 py-3 rounded relative max-w-4xl mx-auto;
+}
+
+.alert.danger {
+  @apply bg-red-100 border-red-400 text-red-700;
+}
+
+.alert.success {
+  @apply bg-green-100 border-green-400 text-green-700;
+}
+
+.alert .close {
+  @apply absolute top-0 bottom-0 right-0 px-4 py-3;
+}
+
+.pagination-button {
+  @apply py-2 px-4 bg-white border border-gray-200 text-indigo-600;
+}
+
+.pagination-button:hover,
+.pagination-button:focus {
+  @apply bg-indigo-600 text-white outline-none;
+}
+
+.btn {
+  @apply p-2;
+}
+
+.btn.primary {
+  @apply text-white bg-indigo-600;
+}
+
+.btn:not(.bg-transparent):hover,
+.btn:not(.bg-transparent):focus {
+  @apply bg-indigo-500 outline-none;
+}
