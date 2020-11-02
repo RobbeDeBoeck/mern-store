@@ -14,6 +14,7 @@ import UnAuthRoute from "./guards/UnAuthRoute";
 import About from "./pages/About";
 
 function App() {
+  document.title = BRAND_NAME;
   return (
     <Router>
       <AuthProvider>
