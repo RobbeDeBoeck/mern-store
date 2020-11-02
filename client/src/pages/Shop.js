@@ -59,8 +59,8 @@ export default function Shop() {
       </Alert>
       <Loader show={loading} />
       <div className="container mx-auto">
-        <div className="flex justify-center items-baseline mb-6">
-          <div className="relative flex-grow">
+        <div className="flex justify-center items-baseline mb-6 flex-wrap sm:flex-no-wrap mx-3 sm:mx-0">
+          <div className="relative flex-grow mb-3 sm:mb-0 w-full sm:w-auto">
             <span className="absolute inset-y-0 left-0 pl-3 flex items-center">
               <svg className="h-5 w-5 text-gray-500" viewBox="0 0 24 24" fill="none">
                 <path
@@ -73,17 +73,13 @@ export default function Shop() {
               </svg>
             </span>
             <input
-              className="w-full border rounded-md pl-10 pr-4 py-2 focus:border-blue-500 focus:shadow-outline"
+              className="w-full form-control pl-10 pr-4"
               type="search"
               placeholder="Search"
               onChange={e => setSearch(e.target.value)}
             />
           </div>
-          <select
-            value={category}
-            className="px-6 py-2 ml-6 border rounded-md focus:shadow-outline"
-            onChange={e => setCategory(e.target.value)}
-          >
+          <select value={category} className="form-control sm:ml-6 flex-grow sm:flex-grow-0" onChange={e => setCategory(e.target.value)}>
             <option value="">All</option>
             {categories.map(c => (
               <option value={c._id} key={c._id}>
@@ -91,11 +87,7 @@ export default function Shop() {
               </option>
             ))}
           </select>
-          <select
-            defaultValue={12}
-            className="px-6 py-2 ml-6 border rounded-md focus:shadow-outline"
-            onChange={e => setLimit(e.target.value)}
-          >
+          <select defaultValue={12} className="form-control ml-6" onChange={e => setLimit(e.target.value)}>
             <option>4</option>
             <option>8</option>
             <option>12</option>
