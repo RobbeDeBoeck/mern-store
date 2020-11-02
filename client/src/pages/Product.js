@@ -20,7 +20,7 @@ export default function Product() {
   useEffect(() => {
     async function fetchProduct() {
       try {
-        const res = await fetch(`${API_URL}products/${id}`);
+        const res = await fetch(`${API_URL}/products/${id}`);
         setProduct(res);
       } catch (err) {
         const res = err.response;
