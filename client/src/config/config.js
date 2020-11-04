@@ -1,4 +1,4 @@
-export const API_URL = "/api";
+export const API_URL = "http://localhost:4000/api";
 export const BRAND_NAME = "Brandname";
 export const NAV_ITEMS = [
   { path: "/", label: "Home" },
