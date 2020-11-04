@@ -6,12 +6,13 @@ import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import Product from "./pages/Product";
 import Cart from "./pages/Cart";
-import { BRAND_NAME } from "./config/config";
 import Auth from "./pages/Auth";
+import About from "./pages/About";
+
+import { BRAND_NAME } from "./config/config";
 import { AuthProvider } from "./context/AuthContext";
 import { CartProvider } from "./context/CartContext";
 import UnAuthRoute from "./guards/UnAuthRoute";
-import About from "./pages/About";
 
 function App() {
   document.title = BRAND_NAME;

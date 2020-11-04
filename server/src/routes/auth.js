@@ -1,7 +1,7 @@
-const express = require("express");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
-const User = require("../models/user");
+import express from "express";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+import User from "../models/user";
 
 const router = express.Router();
 
@@ -17,7 +17,6 @@ router.post("/login", async (req, res) => {
 
     res.json({ token });
   } catch (err) {
-    console.log(err);
     res.status(400).json(err);
   }
 });
@@ -41,11 +40,8 @@ router.post("/register", async (req, res) => {
     await newUser.save();
     res.status(201).json({ _id: newUser._id });
   } catch (err) {
-    console.log(err);
     res.status(400).json(err);
   }
 });
 
-router.delete("/logout", (req, res) => {});
-
-module.exports = router;
+export default router;

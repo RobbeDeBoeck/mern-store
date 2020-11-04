@@ -1,6 +1,6 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const Product = require("../models/product");
+import express from "express";
+import mongoose from "mongoose";
+import Product from "../models/product";
 
 const router = express.Router();
 
@@ -43,4 +43,4 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

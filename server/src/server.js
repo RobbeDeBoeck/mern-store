@@ -1,9 +1,10 @@
-if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config();
-}
-const express = require("express");
-const mongoose = require("mongoose");
-const cors = require("cors");
+import express from "express";
+import mongoose from "mongoose";
+import cors from "cors";
+
+import productRoutes from "./routes/products";
+import categoryRoutes from "./routes/categories";
+import authRoutes from "./routes/auth";
 
 const app = express();
 const { DB_USER, DB_PASWD, DB_NAME, PORT = 4000 } = process.env;
@@ -22,9 +23,9 @@ app.use(express.json());
 app.use(cors());
 
 // api routes
-app.use("/api/products", require("./routes/products"));
-app.use("/api/categories", require("./routes/categories"));
-app.use("/api/auth", require("./routes/auth"));
+app.use("/api/products", productRoutes);
+app.use("/api/categories", categoryRoutes);
+app.use("/api/auth", authRoutes);
 
 // production route
 if (process.env.NODE_ENV === "production") {

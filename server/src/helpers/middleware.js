@@ -1,6 +1,6 @@
-const jwt = require("jsonwebtoken");
+import jwt from "jsonwebtoken";
 
-function paginate(model) {
+export function paginate(model) {
   return async (req, res, next) => {
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 12;
@@ -30,7 +30,7 @@ function paginate(model) {
   };
 }
 
-function authenticate(req, res, next) {
+export function authenticate(req, res, next) {
   const header = req.headers["authorization"];
   const token = header && header.split(" ")[1];
   if (!token) return res.status(401).json({ message: "Unauthenticated" });
@@ -43,5 +43,3 @@ function authenticate(req, res, next) {
     res.status(403).json({ message: "Unauthorized" });
   }
 }
-
-module.exports = { paginate, authenticate };
